@@ -75,6 +75,24 @@ DESCRIPTION: To create an application that features a database of student projec
     - Body-Parser
     - Method_Override
     
+    
+USER MODEL
+    - Name (required)
+    - Email (required)
+    - Username (required)
+    - Password (required)
+    - Description / Bio / Experience
+    - Picture 
+    - Personal website URL
+    - Location
+    - Projects
+    
+PROJECT MODEL
+    - Project Name (required)
+    - Project Description
+    - Project Link (required)
+    - Github (or other repo)
+    - Pictures 
 
 
 
