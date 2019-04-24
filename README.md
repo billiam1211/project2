@@ -12,14 +12,14 @@ DESCRIPTION: To create an application that features a database of student projec
     - Users can either create an account to upload their work OR browse existing content
         
 3) Create Account
-    => User will be able to create an account with the following information:
-        - Username / Password
-        - firstName / lastName
-        - email address
-        - Personal Website URL
-        - Location
-        - Personal Summary or Description & Experience
-        - After account is created, redirect to new account page
+    - User will be able to create an account with the following information
+    - Username / Password
+    - firstName / lastName
+    - email address
+    - Personal Website URL
+    - Location
+    - Personal Summary or Description & Experience
+    - After account is created, redirect to new account page
         
 4) New Account page 
     - Show session message acknowledging account creation
@@ -33,11 +33,11 @@ DESCRIPTION: To create an application that features a database of student projec
     
 6) Create Project Showcase
     - User will be able to enter information outlined in project model
-        => Project Name
-        => Project Description
-        => Project Link
-        => Github (or other repo)
-        => Pictures!!!
+        - Project Name
+        - Project Description
+        - Project Link
+        - Github (or other repo)
+        - Pictures!!!
 
 7) Users Index
     - Users and non-users will have the ability to view existing users in the Users index page
@@ -50,11 +50,11 @@ DESCRIPTION: To create an application that features a database of student projec
 
 9) Project Show page
     - This page will show information from the project model as well as a link to visit the deployed project
-        => Project Name
-        => Project Description
-        => Project Link
-        => Github (or other repo)
-        => Pictures!!!
+        - Project Name
+        - Project Description
+        - Project Link
+        - Github (or other repo)
+        - Pictures!!!
     - Note: Links will direct users to an external site where project is hosted
     - Site visitors will have access to go back to the user page / project index
     - User will have an option for editing their existing project
