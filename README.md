@@ -7,9 +7,9 @@ DESCRIPTION: To create an application that features a database of student projec
 1) Mission Statement: Provide a platform where users can upload and share their latest programming work AND talent seekers can view projects of up and coming developers
 
 2) HOME 
-    => Provide a link for users to log-in or register. 
-    => Display website mission statement 
-    => Users can either create an account to upload their work OR browse existing content
+    - Provide a link for users to log-in or register. 
+    - Display website mission statement 
+    - Users can either create an account to upload their work OR browse existing content
         
 3) Create Account
     => User will be able to create an account with the following information:
