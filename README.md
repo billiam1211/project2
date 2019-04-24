@@ -63,7 +63,7 @@ DESCRIPTION: To create an application that features a database of student projec
     - User will be able to edit/update their project information
     - After Project edits are complete, redirect to project show page
     
-TECHNOLOGIES USED:
+11) TECHNOLOGIES USED
     - Node
     - Express
     - Mongo
