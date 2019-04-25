@@ -11,8 +11,15 @@ router.get('/new', (req, res) => {
 });
 
 // INDEX ROUTE
-router.get('/', (req, res) => {
-	res.send('index page goes here!')
+router.get('/', async (req, res) => {
+	try {
+		const foundUsers = await User.find({})
+		res.render('users/index.ejs', {
+			users: foundUsers
+		})
+	} catch(err) {
+		res.send(err)
+	}
 });
 
 // SHOW ROUTE

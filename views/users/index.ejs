@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Index Page</title>
+</head>
+<body>
+
+	<h1>Users</h1>
+
+	<ul> <!-- ul {
+		  list-style-type: none;
+		} to remove bullets from <li> -->
+		<% for(let i = 0; i < users.length; i++) {%>
+			<li>
+				<a href="/users/<%=users[i]._id%>">
+					<div>
+						<img src="<%=users[i].imageURL%>">
+						<%=users[i].firstName%> <%=users[i].lasttName%><br/>
+						<%=users[i].description%>
+					</div>
+				</a>
+
+			</li>
+		<%}%>
+	</ul>
+
+</body>
+</html>
