@@ -7,10 +7,23 @@
 
 	<h1>Create New Project</h1>
 
-	<form action="/projects" method="post">
-		
-		
-	</form>
+	<small><%= message %></small>
 
+	<form action="/projects" method="post">
+		<input type="text" name="name" placeholder="Project name">
+		<textarea name="description" placeholder="enter project description"></textarea>
+		<input type="text" name="projectURL" placeholder="Link to your project">
+		<input type="text" name="repo" placeholder="Github or Repo Link">
+		<input type="text" name="projectImage" placeholder="URL of Project Image">
+		<button type="submit">Create Project</button>
+	</form>
 </body>
 </html>
+
+
+
+	name: {type: String, required: true},
+	description: String,
+	projectURL: {type: String, required: true},
+	repo: String,
+	projectImage: String

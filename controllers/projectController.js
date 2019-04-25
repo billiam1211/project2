@@ -8,13 +8,19 @@ const User = require('../models/users.js');
 
 // NEW ROUTE
 router.get('/new', (req, res) => {
+
 	res.render('projects/new.ejs')
+
 });
 
 // CREATE ROUTE
 router.post('/', async (req, res) => {
-	// create new project and redirect to the user that 
-	// owns the project 
+	// use session id to find user
+	// create project
+	// push into user.projects
+	// save
+	
+
 
 
 	try {
