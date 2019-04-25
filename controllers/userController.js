@@ -4,10 +4,15 @@ const Project = require('../models/projects.js');
 const User = require('../models/users.js');
 const bcrypt = require('bcryptjs');
 
+
+
+
 // NEW ROUTE
 router.get('/new', (req, res) => {
 	// render new user 
-	res.render('users/new.ejs')
+	res.render('users/new.ejs', {
+		message: req.session.message
+	});
 });
 
 // INDEX ROUTE
@@ -30,7 +35,8 @@ router.get('/:id', async (req, res) => {
 		.exec((err, foundUser) => {
 			console.log(foundUser);
 			res.render('users/show.ejs', {
-				user: foundUser
+				user: foundUser,
+				message: req.session.message
 		})
 	})
 
@@ -54,11 +60,18 @@ router.post('/', async (req, res) => {
 	try {
 
 		const createdUser = await User.create(userDbEntry);
-		req.session.logged = true;
-		req.session.userDbId = createdUser._id;
-		console.log(createdUser);
+		if(createdUser){
+			req.session.logged = true;
+			req.session.userDbId = createdUser._id;
+			console.log(createdUser);
+			req.session.message = "Account Created. Thank you!"
 
-		res.redirect(`/users/${createdUser._id}`)
+			res.redirect(`/users/${createdUser._id}`)
+		} else {
+			req.session.message = "A required field is incomplete"
+		}
+
+
 	} catch(err) {
 		res.send(err)
 	}

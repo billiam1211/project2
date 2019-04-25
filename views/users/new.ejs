@@ -6,12 +6,14 @@
 <body>
 	<h1>Create Profile</h1>
 
+	  <small><%= message %></small>
+
 	<form action="/users" method="POST">
-		<input type="text" name="userName" placeholder="username"><br/>
-		<input type="text" name="password" placeholder="password"><br/>
-		<input type="text" name="firstName" placeholder="first name"><br/>
-		<input type="text" name="lastName" placeholder="last name"><br/>
-		<input type="text" name="email" placeholder="email address"><br/>
+		<input type="text" name="userName" placeholder="username">*<br/>
+		<input type="password" name="password" placeholder="password">*<br/>
+		<input type="text" name="firstName" placeholder="first name">*<br/>
+		<input type="text" name="lastName" placeholder="last name">*<br/>
+		<input type="text" name="email" placeholder="email address">*<br/>
 		<input type="text" name="location" placeholder="location"><br/>
 		<input type="text" name="imageURL" placeholder="image URL"><br/>
 

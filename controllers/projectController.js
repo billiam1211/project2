@@ -4,6 +4,8 @@ const Project = require('../models/projects.js');
 const User = require('../models/users.js');
 
 
+
+
 // NEW ROUTE
 router.get('/new', (req, res) => {
 	res.render('projects/new.ejs')
