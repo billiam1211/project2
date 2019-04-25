@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 // SHOW ROUTE
 router.get('/:id', async (req, res) => {
-
+	// need to add projects to .populate()
 	User.findById(req.params.id)
 		.populate('projects')
 		.exec((err, foundUser) => {
@@ -60,18 +60,39 @@ router.post('/', async (req, res) => {
 
 
 // EDIT ROUTE 
-router.get('/:id/edit', (req, res) => {
-	res.send('edit route here')
+router.get('/:id/edit', async (req, res) => {
+
+	try {
+		const foundUser = await User.findById(req.params.id);
+		res.render('users/edit.ejs', {
+			user: foundUser
+		})
+		console.log(foundUser);
+	} catch(err) {
+		res.send(err)
+	}
+
 });
 
 // UPDATE ROUTE
-router.put('/:id', (req, res) => {
-
+router.put('/:id', async (req, res) => {
+	try {
+		const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {new: true});
+		res.redirect(`/users/${req.params.id}`)
+	} catch(err) {
+		res.redirect(`/users/${req.params.id}/edit`)
+	}
 });
 
 // DESTROY ROUTE
-router.delete('/:id', (req, res) => {
-
+router.delete('/:id', async (req, res) => {
+	// need to add Projects.deleteMany()
+	try {
+		const deletedUser = await User.findByIdAndRemove(req.params.id);
+		res.redirect('/');
+	} catch (err) {
+		res.send(err)
+	}
 });
 
 

@@ -11,6 +11,9 @@ router.get('/new', (req, res) => {
 
 // CREATE ROUTE
 router.post('/', async (req, res) => {
+	// create new project and redirect to the user that 
+	// owns the project 
+
 
 	try {
 		const createdProject = await Project.create(req.body);
@@ -18,7 +21,6 @@ router.post('/', async (req, res) => {
 		res.redirect('/users/')
 
 	} catch(err) {
-
 
 
 	}
