@@ -12,12 +12,17 @@ const projectController = require('./controllers/projectController');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 
-
 app.use(session({
-  secret: 'asdfjkl;123*alkjdf...alskdjfa;29jnfn',
+  secret: 'a3jkal12l3!lkj%soin',
   resave: false, 
   saveUninitialized: false 
 }))
+
+app.use('/users', userController);
+app.use('/projects', projectController);
+
+
+
 
 
 

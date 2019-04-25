@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New User Page</title>
+</head>
+<body>
+	<h1>Create Profile</h1>
+
+	<form action="/users" method="POST">
+		<input type="text" name="userName" placeholder="username"><br/>
+		<input type="text" name="password" placeholder="password"><br/>
+		<input type="text" name="firstName" placeholder="first name"><br/>
+		<input type="text" name="lastName" placeholder="last name"><br/>
+		<input type="text" name="email" placeholder="email address"><br/>
+		<input type="text" name="location" placeholder="location"><br/>
+		<input type="text" name="imageURL" placeholder="image URL"><br/>
+
+		<p>Please enter a description about your developer experiences in the box below:</p>
+		<textarea name="description"></textarea><br/>
+
+		<button type="submit">Create Profile</button><br/>
+		
+	</form>
+
+</body>
+</html>
+
