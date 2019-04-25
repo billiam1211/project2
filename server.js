@@ -19,7 +19,7 @@ app.use(session({
 }))
 
 app.use('/users', userController);
-app.use('/projects', projectController);
+app.use('/users/projects', projectController);
 
 
 

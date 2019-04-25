@@ -12,11 +12,20 @@ router.get('/new', (req, res) => {
 
 // INDEX ROUTE
 router.get('/', (req, res) => {
-	
+	res.send('index page goes here!')
 });
 
 // SHOW ROUTE
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
+
+	User.findById(req.params.id)
+		.populate('projects')
+		.exec((err, foundUser) => {
+			console.log(foundUser);
+			res.render('users/show.ejs', {
+				user: foundUser
+		})
+	})
 
 });
 
@@ -26,7 +35,7 @@ router.post('/', async (req, res) => {
 	const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 
 	const userDbEntry = {};
-	userDbEntry.username = req.body.username;
+	userDbEntry.userName = req.body.userName;
 	userDbEntry.password = passwordHash;
 	userDbEntry.firstName = req.body.firstName;
 	userDbEntry.lastName = req.body.lastName;
@@ -37,15 +46,22 @@ router.post('/', async (req, res) => {
 
 	try {
 
+		const createdUser = await User.create(userDbEntry);
+		req.session.logged = true;
+		req.session.userDbId = createdUser._id;
+		console.log(createdUser);
+
+		res.redirect(`/users/${createdUser._id}`)
 	} catch(err) {
 		res.send(err)
 	}
 
 });
 
+
 // EDIT ROUTE 
 router.get('/:id/edit', (req, res) => {
-
+	res.send('edit route here')
 });
 
 // UPDATE ROUTE
