@@ -3,22 +3,25 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Kalam|Poiret+One|Shadows+Into+Light" rel="stylesheet">
 	<title>Home Page</title>
 </head>
 
 <body id="homeBody">
 	<%- include ./partials/header.ejs %>
 
-<!-- 	<h1>Home</h1> -->
+	<div id="msContainer">
+		<div id="homeContent">
+			<h2>Mission Statement:</h2>
+			<p id="missionStatement">Provide a platform where developers can upload and share their latest and greatest  work for talent seekers.<br/>
 
-	<div id="homeLogin">
-<!-- 		<h2>Login</h2> -->
-		<form action="/login" method="POST">
-		    <input type="text" name="userName" placeholder="username">
-		    <input type="password" name="password" placeholder="password">
-		    <button type="submit">Login</button>
-	  	</form>
-  	</div>
+			When you need a personal website to show your amazing works, want to get feedback about your projects, need more than a CV to impress people, want to tell more about what you do and have done so far, scriptHub has you covered.
+			</p>
+		</div>
+	</div>
+
+
+
 
 </body>
 </html>

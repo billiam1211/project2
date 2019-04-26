@@ -28,13 +28,13 @@ router.get('/', async (req, res) => {
 });
 
 // SHOW ROUTE
-router.get('/:id', async (req, res) => { console.log("hey");
+router.get('/:id', async (req, res) => {
 	// need to add projects to .populate()
 	User.findById(req.params.id)
 		.populate('projects')
 		.exec((err, foundUser) => {
-			console.log("\nhere is foundUser----is this happening twice?");
-			console.log(foundUser);
+			// console.log("\nhere is foundUser----is this happening twice?");
+			// console.log(foundUser);
 			res.render('users/show.ejs', {
 				user: foundUser,
 				message: req.session.message
@@ -60,7 +60,7 @@ router.post('/', async (req, res) => {
 		if(createdUser){
 			req.session.logged = true;
 			req.session.userDbId = createdUser._id;
-			console.log(createdUser);
+			// console.log(createdUser);
 			req.session.message = "Account Created. Thank you!"
 			res.redirect(`/users/${createdUser._id}`)
 		} else {
@@ -80,7 +80,7 @@ router.get('/:id/edit', async (req, res) => {
 		res.render('users/edit.ejs', {
 			user: foundUser
 		})
-		console.log(foundUser);
+		// console.log(foundUser);
 	} catch(err) {
 		res.send(err)
 	}

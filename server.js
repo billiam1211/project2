@@ -32,17 +32,29 @@ app.get('/', (req, res) => {
 		})
 })
 
+app.get('/about', (req, res) => {
+    res.render('about.ejs', {
+      message: req.session.message
+    })
+})
+
+app.get('/contact', (req, res) => {
+    res.render('contact.ejs', {
+      message: req.session.message
+    })
+})
+
 app.post('/login', async (req, res, next) => {
 
   try {
     const foundUser = await User.findOne({userName: req.body.userName});
-    console.log(foundUser);
+    // console.log(foundUser);
     if(foundUser){
       if(bcrypt.compareSync(req.body.password, foundUser.password) === true){
         req.session.message = '';
         req.session.logged = true;
         req.session.usersDbId = foundUser._id;
-        console.log(req.session, ' successful in login')
+        // console.log(req.session, ' successful in login')
         res.redirect(`/users/${foundUser._id}`);
       } else {
         req.session.message = "Username or password is incorrect";

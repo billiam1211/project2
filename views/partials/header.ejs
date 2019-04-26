@@ -7,13 +7,23 @@
 </head>
 
 <body>
-	<div class="navigation">
 		<nav class="navbar">
 			<div >
 				<a href="/" class="navTab">Home</a>
 				<a href="/users/new" class="navTab">Register</a>
 				<a href="/users" class="navTab">Developers</a>
-				<a href="" class="navTab">About</a>
-				<a href="" class="navTab">Contact</a>
+				<a href="/about" class="navTab">About</a>
+				<a href="/contact" class="navTab">Contact</a>
+			</div>
+
+			<div id="homeLogin">
+				<form action="/login" method="POST">
+					<input type="text" name="userName" placeholder="username">
+					<input type="password" name="password" placeholder="password">
+					<button type="submit">Login</button>
+				</form>
+			</div>
+
 		</nav>
-	</div>
+
+

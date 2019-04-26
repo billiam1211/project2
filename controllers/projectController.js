@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 
 // NEW ROUTE
 router.get('/new', (req, res) => {
-	console.log(req.session);
+	// console.log(req.session);
 
 	res.render('projects/new.ejs')
 });
@@ -20,10 +20,10 @@ router.post('/', async (req, res, next) => {
 	try {
 		const createdProject = await Project.create(req.body);
 		const foundUser = await User.findById(req.session.usersDbId)
-		console.log('found user ========> ' + foundUser);
+		// console.log('found user ========> ' + foundUser);
 		foundUser.projects.push(createdProject)
 		foundUser.save((err, savedUser) => {
-			console.log('===> ' + savedUser);
+			// console.log('===> ' + savedUser);
 			// res.render('users/show.ejs', {
 			// 	user: foundUser,
 			// 	message: '',
@@ -39,7 +39,7 @@ router.post('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
 	try {
 		const foundProject = await Project.findById(req.params.id)
-		console.log(foundProject);
+		// console.log(foundProject);
 		res.render('projects/show.ejs', {
 			project: foundProject
 		})
@@ -50,7 +50,7 @@ router.get('/:id', async (req, res, next) => {
 
 // DESTROY
 router.delete('/:id', async (req, res, next) => {
-	console.log("delete");
+	// console.log("delete");
 	try {
 		const deletedProject = await Project.findByIdAndDelete(req.params.id);
 		res.redirect(`/users/${req.session.usersDbId}`)
