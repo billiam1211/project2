@@ -29,6 +29,21 @@ li {
 	list-style-type: none;
 }
 
+footer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+}
+
+#footerDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	background-color: rgba(0, 0, 0, .8);
+	padding-bottom: 25px;
+	padding-top: 25px;
+}
+
 .topContainer {
 	display: flex;
 	flex-direction: row;
@@ -42,7 +57,7 @@ li {
 	justify-content: space-between;
     margin-bottom: 0;
     background-color: rgba(0, 0, 0, .5);
-    font-size: 20px;
+    font-size: 18px;
     line-height: 2;
     letter-spacing: 4px;
     font-family: Arial;
@@ -59,7 +74,7 @@ li {
 }
 
 #missionStatement {
-	font-size: 20px;
+	font-size: 25px;
 	font-family: 'Poiret One', cursive;}
 }
 
