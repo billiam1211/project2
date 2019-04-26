@@ -3,8 +3,8 @@ const app            = express();
 const bodyParser     = require('body-parser');
 const methodOverride = require('method-override');
 const session        = require('express-session');
-const User 			 = require('./models/users.js')
-const bcrypt 		 = require('bcryptjs')
+const User 			     = require('./models/users.js')
+const bcrypt 		     = require('bcryptjs')
 require('./db/db')
 
 
@@ -21,7 +21,7 @@ app.use(session({
 }))
 
 app.use('/users', userController);
-app.use('/users/projects', projectController);
+app.use('/projects', projectController);
 
 
 
@@ -35,38 +35,25 @@ app.post('/login', async (req, res, next) => {
 
   try {
     const foundUser = await User.findOne({userName: req.body.userName});
-
     console.log(foundUser);
-
     if(foundUser){
-
-
       if(bcrypt.compareSync(req.body.password, foundUser.password) === true){
-
         req.session.message = '';
         req.session.logged = true;
         req.session.usersDbId = foundUser._id;
-
         console.log(req.session, ' successful in login')
         res.redirect(`/users/${foundUser._id}`);
-
       } else {
-
         req.session.message = "Username or password is incorrect";
         res.redirect('/');
       }
-
     } else {
-
       req.session.message = 'Username or Password is incorrect';
-
       res.redirect('/');
     }
-
   } catch(err){
     next(err);
-  }
-			
+  }	
 })
 
 

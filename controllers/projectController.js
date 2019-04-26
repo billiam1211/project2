@@ -2,35 +2,36 @@ const express = require('express');
 const router = express.Router();
 const Project = require('../models/projects.js');
 const User = require('../models/users.js');
-
-
+const bcrypt = require('bcryptjs');
 
 
 // NEW ROUTE
 router.get('/new', (req, res) => {
+	console.log(req.session);
 
 	res.render('projects/new.ejs')
-
 });
 
 // CREATE ROUTE
-router.post('/', async (req, res) => {
+router.post('/', async (req, res, next) => {
 	// use session id to find user
 	// create project
 	// push into user.projects
 	// save
-	
-
-
-
 	try {
 		const createdProject = await Project.create(req.body);
-		user.findById(req.body.projectId)
-		res.redirect('/users/')
+
+		const foundUser = await User.findById(req.session.usersDbId)
+		console.log('found user ========> ' + foundUser);
+
+		res.render('users/show.ejs', {
+			user: foundUser,
+			message: '',
+			new: true
+		})
 
 	} catch(err) {
-
-
+		next(err)
 	}
 })
 
