@@ -20,14 +20,17 @@ router.post('/', async (req, res, next) => {
 	// save
 	try {
 		const createdProject = await Project.create(req.body);
-
 		const foundUser = await User.findById(req.session.usersDbId)
 		console.log('found user ========> ' + foundUser);
-
+		foundUser.projects.push(createdProject)
+		foundUser.save((err, savedUser) => {
+			console.log('===> ' + savedUser);
 		res.render('users/show.ejs', {
 			user: foundUser,
 			message: '',
 			new: true
+		})
+
 		})
 
 	} catch(err) {

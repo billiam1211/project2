@@ -37,6 +37,7 @@ router.get('/:id', async (req, res) => {
 			res.render('users/show.ejs', {
 				user: foundUser,
 				message: req.session.message
+				// populate user projects with .populate()
 		})
 	})
 
