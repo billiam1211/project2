@@ -6,13 +6,17 @@
 	<title>Project Show Page</title>
 </head>
 <body>
-	<%- include ./partials/header.ejs %>
+	<%- include ../partials/header.ejs %>
 
 	<h1><%=project.name%></h1>
-	<p><%=project.description%></p>
-	<a href="<%=project.projectURL%>"></a><br/>
-	<a href="<%=project.repo%>"></a><br/>
-	<img src="<%=project.image%>"><br/>
+	<p>Description: <%=project.description%></p>
+
+
+	<p>Project URL: <a href="<%=project.projectURL%>"><%=project.projectURL%></a></p>
+	
+	<p>Project Repository: <a href="<%=project.repo%>"><%=project.repo%></a></p>
+	<img src="<%=project.projectImage%>" class="projectImage"><br/>
+	<a href="/projects/<%=project._id%>/edit"><button>EDIT</button></a>
 
 </body>
 </html>

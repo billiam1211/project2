@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
-</head>
-<body class="userBody">
-	<%- include ../partials/header.ejs %>
+
+<%- include ../partials/header.ejs %>
 
 
 	<h1>User Profile</h1>
 
 	<small><%= message %></small>
 
-	<div">
+	<div>
 		<img src="<%=user.imageURL%>" class="userImage">
 	</div>
 
@@ -30,13 +24,13 @@
 		<button type="submit">Create New Project</button>
 	</a>
 	<ul>
-		<% for(let i = 0; i < user.projects.length; i++) {%>
+		<% for(let i = 0; i < user.projects.length; i++) { console.log("here's a project\n",user.projects[i]) %>
 			<li>
 				<a href="/projects/<%=user.projects[i]._id%>">
 					<h3>Project Name: <%=user.projects[i].name%><br></h3>
 					<p>Project Description: <%=user.projects[i].description%></p>
 				</a>
-					<img src="<%=user.projects[i].projectImage%>" class="projectImage">
+				<img src="<%=user.projects[i].projectImage%>" class="projectImage" /> 
 			</li>
 		<% } %>
 	</ul>

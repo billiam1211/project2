@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<title>Project Edit Page</title>
+</head>
+<body>
+	<%- include ../partials/header.ejs %>
+
+		<h1>Project Edit</h1>
+
+	<form action="/projects/<%=project._id%>?_method=PUT" method="POST">
+
+		<input type="text" name="name" value="<%=project.name%>"><br/>
+		<input type="text" name="projectURL" value="<%=project.projectURL%>"><br/>
+		<input type="text" name="repo" value="<%=project.repo%>"><br/>
+		<input type="text" name="projectImage" value="<%=project.projectImage%>"><br/>
+
+
+		<textarea name="description"><%=project.description%></textarea><br/>
+
+		<button type="submit">Submit Changes</button><br/>
+		
+	</form>
+
+
+	<form action="/projects/<%=project._id%>?_method=DELETE" method="POST">
+		<button type="submit">Delete Project</button>
+	</form>
+
+
+</body>
+</html>
