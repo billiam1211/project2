@@ -13,6 +13,7 @@ const projectController = require('./controllers/projectController');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
+app.use(express.static('public'))
 
 app.use(session({
   secret: 'a3jkal12l3!lkj%soin',

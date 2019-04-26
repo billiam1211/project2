@@ -33,11 +33,11 @@ router.get('/:id', async (req, res) => {
 	User.findById(req.params.id)
 		.populate('projects')
 		.exec((err, foundUser) => {
+			console.log("\n here is foundUser");
 			console.log(foundUser);
 			res.render('users/show.ejs', {
 				user: foundUser,
 				message: req.session.message
-				// populate user projects with .populate()
 		})
 	})
 

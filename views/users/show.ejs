@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>User Show Page</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<body>
+<body class="userBody">
 	<%- include ../partials/header.ejs %>
 
 
@@ -11,7 +12,9 @@
 
 	<small><%= message %></small>
 
-	<img src="<%=user.imageURL%>">
+	<div">
+		<img src="<%=user.imageURL%>" class="userImage">
+	</div>
 
 	<p>Username: <%=user.userName%></p>
 	<p>Name: <%=user.firstName%> <%=user.lastName%></p>
@@ -26,7 +29,17 @@
 	<a href="/projects/new">
 		<button type="submit">Create New Project</button>
 	</a>
-
+	<ul>
+		<% for(let i = 0; i < user.projects.length; i++) {%>
+			<li>
+				<a href="/projects/<%=user.projects[i]._id%>">
+					<h3>Project Name: <%=user.projects[i].name%><br></h3>
+					<p>Project Description: <%=user.projects[i].description%></p>
+				</a>
+					<img src="<%=user.projects[i].projectImage%>" class="projectImage">
+			</li>
+		<% } %>
+	</ul>
 </body>
 </html>
 

@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>User Index Page</title>
 </head>
 <body>
 	<%- include ../partials/header.ejs %>
-	<h1>Users</h1>
-
+	<div class="topContainer">
+		<h1>Developer List</h1>
+	</div>
 	<ul> <!-- ul {
 		  list-style-type: none;
 		} to remove bullets from <li> -->
 		<% for(let i = 0; i < users.length; i++) {%>
 			<li>
 				<a href="/users/<%=users[i]._id%>">
-					<div>
+					<div id="userImgDiv">
 						<img src="<%=users[i].imageURL%>">
-						<%=users[i].firstName%> <%=users[i].lasttName%><br/>
-						<%=users[i].description%>
-					</div>
+					</div><br>
 				</a>
+				<p>Developer Name: <%=users[i].firstName%> <%=users[i].lasttName%></p>
+				<p>Experience: <%=users[i].description%></p>
 
 			</li>
 		<%}%>

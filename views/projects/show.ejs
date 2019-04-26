@@ -1,24 +1,26 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>User Show Page</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<title>Project Show Page</title>
 </head>
 <body>
+	<%- include ./partials/header.ejs %>
 
-	<h1>User Profile</h1>
-
-	<img src="<%=user.imageURL%>">
-
-	<p><%=user.userName%></p>
-	<p><%=user.firstName%></p>
-	<p><%=user.lastName%></p>
-	<p><%=user.email%></p>
-	<p><%=user.location%></p>
-	<br/>
-	<p><%=user.decription%></p>
+	<h1><%=project.name%></h1>
+	<p><%=project.description%></p>
+	<a href="<%=project.projectURL%>"></a><br/>
+	<a href="<%=project.repo%>"></a><br/>
+	<img src="<%=project.image%>"><br/>
 
 </body>
 </html>
 
 
- -->
+
+
+
+
+
+

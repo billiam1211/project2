@@ -1,0 +1,83 @@
+body {
+	background-color: lavender;
+	background: url(https://rayyansecutech.com/wp-content/uploads/2018/02/RST-Laptop-Dark.jpg);
+	color: white;
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: white;
+}
+
+.topContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-top: 25px;
+}
+
+.navigation {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.navTab {
+	margin-left: 50px;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 100, .4);
+    font-size: 20px;
+    line-height: 2;
+    letter-spacing: 4px;
+    font-family: Arial;
+  }
+
+#homeBody {
+	text-align: center;
+}
+
+.userBody {
+/*	display: flex;
+	flex-direction: column;
+	text-align: center*/
+}
+
+#userImgDiv {
+	height: 100px;
+	width: 100px;
+	margin: auto 0;
+}
+
+.projectImage {
+	max-width: auto;
+	height: 150px;
+}
+
+.userImage {
+	height: 200px;
+	width: auto;
+}
+
+img {
+	max-width: auto;
+	height: 100%;
+}
+
+li {
+	list-style-type: none;
+}
+
+#homeLogin {
+	padding-top: 550px;
+}
+
+h2 {
+	font-size: 24px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .8);
+	font-weight: 600;
+	margin-bottom: 30px;
+  } 
+
+

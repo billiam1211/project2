@@ -28,7 +28,6 @@ router.post('/', async (req, res, next) => {
 		res.render('users/show.ejs', {
 			user: foundUser,
 			message: '',
-			new: true
 		})
 
 		})
