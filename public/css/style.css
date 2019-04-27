@@ -104,6 +104,16 @@ footer {
 .userImage {
 	height: 200px;
 	width: auto;
+	padding-left: 230px
+}
+
+.userShowH2 {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.button {
+	margin: 20px 20px;
 }
 
 #msContainer {
