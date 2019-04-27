@@ -5,8 +5,19 @@ body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
     color: white;
-}
+    margin-bottom: 200px;
 
+}
+main {
+	margin: 100px
+}
+h1 {
+	font-family: 'Poiret One', cursive;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .8);
+	font-weight: 600;
+	margin-bottom: 30px;
+}
 h2 {
 	font-family: 'Poiret One', cursive;
 	font-size: 24px;
@@ -63,11 +74,6 @@ footer {
     font-family: Arial;
   }
 
-#homeBody {
-
-
-}
-
 #homeContent {
 	width: 50%;
 	height: auto;
@@ -100,10 +106,6 @@ footer {
 	width: auto;
 }
 
-#homeLogin {
-/*	padding-top: 100px;*/
-}
-
 #msContainer {
 	display: flex;
 	justify-content: center;
@@ -111,6 +113,28 @@ footer {
 	margin-top: 25px;
 /*	width: 500px;*/
 	background-color: rgba(0, 0, 100, 0.3);
+}
+
+#regForm {
+	display: flex;
+	justify-content: center;
+/*	background-color: black;*/
+}
+
+#newForm > div{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 5px;
+}
+
+#newForm {
+	background-color: rgba(0, 0, 0, .8);
+	width: 50%;
+	padding: 20px;
+	border-radius: 15px;
+	font-family: 'Poiret One', cursive;
+	font-size: 14pt;
 }
 
 

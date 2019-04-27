@@ -1,32 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<title>New User Page</title>
-</head>
-<body>
 	<%- include ../partials/header.ejs %>
-	<h1>Create Profile</h1>
+	<main>
+		<h1>Create Profile</h1>
 
-	  <small><%= message %></small>
-
-	<form action="/users" method="POST">
-		<input type="text" name="userName" placeholder="username">*<br/>
-		<input type="password" name="password" placeholder="password">*<br/>
-		<input type="text" name="firstName" placeholder="first name">*<br/>
-		<input type="text" name="lastName" placeholder="last name">*<br/>
-		<input type="text" name="email" placeholder="email address">*<br/>
-		<input type="text" name="location" placeholder="location"><br/>
-		<input type="text" name="imageURL" placeholder="image URL"><br/>
-
-		<p>Please enter a description about your developer experiences in the box below:</p>
-		<textarea name="description"></textarea><br/>
-
-		<button type="submit">Create Profile</button><br/>
-		
-	</form>
-
+		  <small><%= message %></small>
+	  	<div id="regForm">
+			<form action="/users" method="POST" id="newForm">
+				<div>
+				<p>Please enter a username:</p>
+				<input type="text" name="userName" placeholder="username">
+				</div>
+				<div>
+				<p>Choose a password:</p>
+				<input type="password" name="password" placeholder="password">
+				</div>
+				<div>
+				<p>Please enter your first name:</p>
+				<input type="text" name="firstName" placeholder="first name">
+				</div>
+				<div>
+				<p>Please enter your last name:</p>
+				<input type="text" name="lastName" placeholder="last name">
+				</div>
+				<div>
+				<p>Please enter your current email address:</p>
+				<input type="text" name="email" placeholder="email address">
+				</div>
+				<div>
+				<p>Please enter your current location:</p>
+				<input type="text" name="location" placeholder="location">
+				</div>
+				<div>
+				<p>Please attach a current photo:</p>
+				<input type="text" name="imageURL" placeholder="image URL">
+				</div>
+				<div>
+				<p>Please enter developer experience:</p>
+				<textarea name="description" rows="5" cols="30"></textarea>
+				</div>
+				<button type="submit">Create Profile</button><br/>
+			</form>
+		</div>
+	</main>
 <%- include ../partials/footer.ejs %>
 </html>
 
