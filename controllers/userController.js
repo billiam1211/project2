@@ -37,7 +37,8 @@ router.get('/:id', async (req, res) => {
 			// console.log(foundUser);
 			res.render('users/show.ejs', {
 				user: foundUser,
-				message: req.session.message
+				message: req.session.message,
+				loggedIn: req.session.usersDbId == req.params.id
 			})
 		})
 });
@@ -59,7 +60,7 @@ router.post('/', async (req, res) => {
 		const createdUser = await User.create(userDbEntry);
 		if(createdUser){
 			req.session.logged = true;
-			req.session.userDbId = createdUser._id;
+			req.session.usersDbId = createdUser._id;
 			// console.log(createdUser);
 			req.session.message = "Account Created. Thank you!"
 			res.redirect(`/users/${createdUser._id}`)
@@ -75,14 +76,18 @@ router.post('/', async (req, res) => {
 
 // EDIT ROUTE 
 router.get('/:id/edit', async (req, res) => {
-	try {
-		const foundUser = await User.findById(req.params.id);
-		res.render('users/edit.ejs', {
-			user: foundUser
-		})
-		// console.log(foundUser);
-	} catch(err) {
-		res.send(err)
+	if (req.session.usersDbId === req.params.id) {	
+		try {
+			const foundUser = await User.findById(req.params.id);
+			res.render('users/edit.ejs', {
+				user: foundUser
+			})
+			// console.log(foundUser);
+		} catch(err) {
+			res.send(err)
+		}
+	} else {
+		res.redirect(`/${req.params.id}`)
 	}
 });
 

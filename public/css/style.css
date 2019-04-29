@@ -51,8 +51,8 @@ footer {
 	flex-direction: row;
 	justify-content: space-evenly;
 	background-color: rgba(0, 0, 0, .8);
-	padding-bottom: 25px;
-	padding-top: 25px;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
 .topContainer {
@@ -113,7 +113,8 @@ footer {
 }
 
 .button {
-	margin: 20px 20px;
+	margin: 25px
+
 }
 
 #msContainer {

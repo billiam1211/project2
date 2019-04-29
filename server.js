@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const session        = require('express-session');
 const User 			     = require('./models/users.js')
 const bcrypt 		     = require('bcryptjs')
+const multer         = require('multer');
 require('./db/db')
 
 
@@ -54,6 +55,7 @@ app.post('/login', async (req, res, next) => {
         req.session.message = '';
         req.session.logged = true;
         req.session.usersDbId = foundUser._id;
+        console.log(req.session.usersDbId + '<========= Session userDbId');
         // console.log(req.session, ' successful in login')
         res.redirect(`/users/${foundUser._id}`);
       } else {

@@ -39,10 +39,15 @@ router.post('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
 	try {
 		const foundProject = await Project.findById(req.params.id)
-		// console.log(foundProject);
+		const foundUser = await User.findOne({projects: foundProject})
+		console.log(`${foundUser._id} <------------foiundUser`);
+		console.log(`${typeof foundUser._id} <------------foundUser`);
+		console.log(req.session.usersDbId);
+		console.log(typeof req.session.usersDbId);
 		res.render('projects/show.ejs', {
-			project: foundProject
-		})
+			project: foundProject,
+			loggedIn: foundUser._id.toString() === req.session.usersDbId.toString() // different types
+		});
 	} catch(err) {
 		next(err)
 	}	
