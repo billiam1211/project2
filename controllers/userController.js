@@ -76,7 +76,7 @@ router.post('/', async (req, res) => {
 
 // EDIT ROUTE 
 router.get('/:id/edit', async (req, res) => {
-	if (req.session.usersDbId === req.params.id) {	
+	if (req.session.usersDbId == req.params.id) {	
 		try {
 			const foundUser = await User.findById(req.params.id);
 			res.render('users/edit.ejs', {
@@ -93,27 +93,35 @@ router.get('/:id/edit', async (req, res) => {
 
 // UPDATE ROUTE
 router.put('/:id', async (req, res) => {
-	try {
-		const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {new: true});
-		res.redirect(`/users/${req.params.id}`)
-	} catch(err) {
-		res.redirect(`/users/${req.params.id}/edit`)
+	if (req.session.usersDbId == req.params.id) {
+		try {
+			const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {new: true});
+			res.redirect(`/users/${req.params.id}`)
+		} catch(err) {
+			res.redirect(`/users/${req.params.id}/edit`)
+		}
+	} else {
+		res.redirect(`/${req.params.id}`)
 	}
 });
 
 // DESTROY ROUTE
 router.delete('/:id', async (req, res) => {
 	// need to add Projects.deleteMany()
-	try {
-		const deletedUser = await User.findByIdAndRemove(req.params.id);
-		Project.deleteMany({
-				_id: {
-					$in: deletedUser.projects
-				}
-			})
-		res.redirect('/');
-	} catch (err) {
-		res.send(err)
+	if (req.session.usersDbId == req.params.id) {
+		try {
+			const deletedUser = await User.findByIdAndRemove(req.params.id);
+			Project.deleteMany({
+					_id: {
+						$in: deletedUser.projects
+					}
+				})
+			res.redirect('/');
+		} catch (err) {
+			res.send(err)
+		}
+	} else {
+				res.redirect(`/${req.params.id}`)
 	}
 });
 

@@ -55,32 +55,51 @@ router.get('/:id', async (req, res, next) => {
 
 // DESTROY
 router.delete('/:id', async (req, res, next) => {
-	// console.log("delete");
 	try {
-		const deletedProject = await Project.findByIdAndDelete(req.params.id);
-		res.redirect(`/users/${req.session.usersDbId}`)
+		const foundProject = await Project.findById(req.params.id);
+		const foundUser = await User.findOne({projects: foundProject})
+		if (req.session.usersDbId == foundUser._id) {	
+			const deletedProject = await Project.findByIdAndDelete(req.params.id);
+			res.redirect(`/users/${req.session.usersDbId}`)
+		} else {
+			res.redirect(`/${req.params.id}`)
+		}
 	} catch(err) {
 		next(err)
 	}
+
+	// console.log("delete");
 });
 
 // EDIT ROUTE
 router.get('/:id/edit', async (req, res, next) => {
 	try {
 		const foundProject = await Project.findById(req.params.id);
-		res.render('projects/edit.ejs', {
-			project: foundProject
-		})
+		const foundUser = await User.findOne({projects: foundProject})
+		if (req.session.usersDbId == foundUser._id) {
+			console.log(foundProject);
+			res.render('projects/edit.ejs', {
+				project: foundProject
+			})
+		} else {
+			res.redirect(`/${req.params.id}`)
+		}
 	} catch(err) {
 		next(err)
-	}	
+	}
 });
 
 // UPDATE ROUTE
 router.put('/:id', async (req, res, next) => {
 	try {
-		const updatedProject = await Project.findByIdAndUpdate(req.params.id, req.body, {new: true})
-		res.redirect(`/users/${req.session.usersDbId}`)
+		const foundProject = await Project.findById(req.params.id);
+		const foundUser = await User.findOne({projects: foundProject})
+		if (req.session.usersDbId == foundUser._id) {
+			const updatedProject = await Project.findByIdAndUpdate(req.params.id, req.body, {new: true})
+			res.redirect(`/users/${req.session.usersDbId}`)
+		} else {
+			res.redirect(`/${req.params.id}`)
+		}	
 	} catch(err) {
 		next(err)
 	}

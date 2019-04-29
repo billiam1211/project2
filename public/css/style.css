@@ -183,9 +183,12 @@ strong {
 }
 
 .showProjects {
+	height: 135px;
+	width: auto;
 	border: dotted black 5px;
 	background-color: rgba(0, 0, 100, .3);
 	margin-right: 40px;
+	margin-top: 15px;
 }
 
 
