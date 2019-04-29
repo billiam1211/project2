@@ -94,10 +94,16 @@ strong {
 	text-align: center*/
 }
 
-#userImgDiv {
-	height: 100px;
-	width: 100px;
+.userImgDiv {
+	height: 150px;
+	width: auto;
 	margin: auto 0;
+	float: left;
+	margin: 20px
+}
+
+.profileImg {
+	max-width: 300px
 }
 
 .projectImage {
@@ -108,8 +114,8 @@ strong {
 }
 
 .userImage {
-	height: 200px;
-	width: auto;
+	max-height: 200px;
+	max-width: 500px;
 	padding-left: 230px
 }
 
@@ -184,6 +190,15 @@ strong {
 
 .showProjects {
 	height: 135px;
+	width: auto;
+	border: dotted black 5px;
+	background-color: rgba(0, 0, 100, .3);
+	margin-right: 40px;
+	margin-top: 15px;
+}
+
+.userDiv {
+	height: 200px;
 	width: auto;
 	border: dotted black 5px;
 	background-color: rgba(0, 0, 100, .3);
