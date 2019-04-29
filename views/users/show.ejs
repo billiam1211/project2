@@ -6,24 +6,24 @@
 
 	<small><%= message %></small>
 		<div id="regForm">
-			<div id="newForm">
+			<div class="newForm">
 				<div>
 					<img src="<%=user.imageURL%>" class="userImage">
 				</div>
 				<div>
-					<p>Username: <%=user.userName%></p>
+					<p><strong>Username:</strong> <%=user.userName%></p>
 				</div>
 				<div>
-					<p>Name: <%=user.firstName%> <%=user.lastName%></p>
+					<p><strong>Name:</strong> <%=user.firstName%> <%=user.lastName%></p>
 				</div>
 				<div>
-					<p>Email: <%=user.email%></p>
+					<p><strong>Email:</strong> <%=user.email%></p>
 				</div>
 				<div>
-					<p>Location: <%=user.location%></p>
+					<p><strong>Location:</strong> <%=user.location%></p>
 				</div>
 				<div>
-					<p>Description: <%=user.description%></p>
+					<p><strong>Description:</strong> <%=user.description%></p>
 				</div>
 				<% if (loggedIn === true) { %>
 				<div>
@@ -31,7 +31,7 @@
 				</div>
 				<% } %>
 				<div>
-					<h2 class="userShowH2">Projects</h2>
+					<h1 class="userShowH2">Projects</h1>
 				</div>
 				<% if (loggedIn === true) { %>
 					<div>
@@ -46,14 +46,16 @@
 							<li>
 								<div>
 									<a href="/projects/<%=user.projects[i]._id%>">
-										<h3>Project Name: <%=user.projects[i].name%><br></h3>
+										<div class="showProjects">
+											<div class="projectImage">
+												<img src="<%=user.projects[i].projectImage%>" class="projectImage" /> 
+											</div>
+											<h3>Project Name: <%=user.projects[i].name%></h3>
+											<div>
+												<p>Project Description: <%=user.projects[i].description%></p>
+											</div>
+										</div>
 									</a>
-								</div>
-								<div>
-									<p>Project Description: <%=user.projects[i].description%></p>
-								</div>
-								<div>
-									<img src="<%=user.projects[i].projectImage%>" class="projectImage" /> 
 								</div>
 							</li>
 						<% } %>

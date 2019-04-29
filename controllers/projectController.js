@@ -46,7 +46,7 @@ router.get('/:id', async (req, res, next) => {
 		console.log(typeof req.session.usersDbId);
 		res.render('projects/show.ejs', {
 			project: foundProject,
-			loggedIn: foundUser._id.toString() === req.session.usersDbId.toString() // different types
+			loggedIn: foundUser._id == req.session.usersDbId
 		});
 	} catch(err) {
 		next(err)

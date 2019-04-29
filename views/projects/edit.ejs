@@ -2,28 +2,35 @@
 	<%- include ../partials/header.ejs %>
 
 <div id="regForm">
-	<div id="newForm">
-
+	<div class="newForm">
 		<h1>Project Edit</h1>
 
 		<form action="/projects/<%=project._id%>?_method=PUT" method="POST">
-
-			<input type="text" name="name" value="<%=project.name%>"><br/>
-			<input type="text" name="projectURL" value="<%=project.projectURL%>"><br/>
-			<input type="text" name="repo" value="<%=project.repo%>"><br/>
-			<input type="text" name="projectImage" value="<%=project.projectImage%>"><br/>
-
-
-			<textarea name="description"><%=project.description%></textarea><br/>
-
-			<button type="submit">Submit Changes</button><br/>
-			
+			<div>
+				<p>Project Name: </p>
+				<input type="text" name="name" value="<%=project.name%>">
+			</div>
+			<div>
+				<p>Project url: </p>
+				<input type="text" name="projectURL" value="<%=project.projectURL%>">
+			</div>
+			<div>
+				<p>Repo link: </p>
+				<input type="text" name="repo" value="<%=project.repo%>">
+			</div>
+			<div>
+				<p>Project Image: </p>
+				<input type="text" name="projectImage" value="<%=project.projectImage%>">
+			</div>
+			<div>
+				<p>Project Description: </p>
+				<textarea name="description"><%=project.description%></textarea>
+			</div>
+			<button type="submit" class="submitBtn">Submit Changes</button>
 		</form>
-
-
-		<form action="/projects/<%=project._id%>?_method=DELETE" method="POST">
-			<button type="submit">Delete Project</button>
-		</form>
+			<form action="/projects/<%=project._id%>?_method=DELETE" method="POST">
+				<button type="submit">Delete Project</button>
+			</form>
 	</div>
 </div>
 

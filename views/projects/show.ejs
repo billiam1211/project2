@@ -2,19 +2,19 @@
 	<%- include ../partials/header.ejs %>
 
 <div id="regForm">
-	<div id="newForm">
+	<div class="newForm">
 
 		<h1><%=project.name%></h1>
-		<p>Description: <%=project.description%></p>
+		<p><strong>Description:</strong> <%=project.description%></p>
 
 
-		<p>Project URL: <a href="<%=project.projectURL%>"><%=project.projectURL%></a></p>
+		<p><strong>Project URL:</strong> <a href="<%=project.projectURL%>"><%=project.projectURL%></a></p>
 		
-		<p>Project Repository: <a href="<%=project.repo%>"><%=project.repo%></a></p>
+		<p><strong>Project Repository: </strong><a href="<%=project.repo%>"><%=project.repo%></a></p>
 		<img src="<%=project.projectImage%>" class="projectImage"><br/>
 		
 		<% if (loggedIn) { %>
-			<a href="/projects/<%=project._id%>/edit"><button>EDIT</button></a>
+			<a href="/projects/<%=project._id%>/edit"><button class="editButton">EDIT</button></a>
 		<% } %>
 	</div>
 </div>

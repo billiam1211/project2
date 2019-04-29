@@ -46,6 +46,10 @@ footer {
 	width: 100%;
 }
 
+strong {
+	font-size: 18pt;
+}
+
 #footerDiv {
 	display: flex;
 	flex-direction: row;
@@ -98,7 +102,9 @@ footer {
 
 .projectImage {
 	max-width: auto;
-	height: 150px;
+	height: 125px;
+	float: left;
+	margin-right: 10px;
 }
 
 .userImage {
@@ -132,14 +138,14 @@ footer {
 /*	background-color: black;*/
 }
 
-#newForm > div{
+.newForm > div {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	margin: 5px;
 }
 
-#newForm {
+.newForm {
 	background-color: rgba(0, 0, 0, .8);
 	width: 50%;
 	padding: 20px;
@@ -147,5 +153,42 @@ footer {
 	font-family: 'Poiret One', cursive;
 	font-size: 14pt;
 }
+
+.newForm > form > div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 5px;
+}
+
+.submitBtn {
+	float: right;
+	margin: 25px 0px;
+}
+
+.editButton {
+	margin: 25px 0px;
+	padding: 0 25px;
+}
+
+#phoneLady {
+	height: 150px;
+	width: auto;
+	border-radius: 15%;
+}
+
+#phoneLadyDiv {
+	display: flex;
+	justify-content: space-around;
+}
+
+.showProjects {
+	border: dotted black 5px;
+	background-color: rgba(0, 0, 100, .3);
+	margin-right: 40px;
+}
+
+
+
 
 
