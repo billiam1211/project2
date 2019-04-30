@@ -6,9 +6,12 @@ const session        = require('express-session');
 const User 			     = require('./models/users.js')
 const bcrypt 		     = require('bcryptjs')
 const multer         = require('multer');
+require('dotenv').config()
+// console.log(process.env);
+
 require('./db/db')
 
-
+const PORT = process.env.PORT
 const userController  = require('./controllers/userController');
 const projectController = require('./controllers/projectController');
 
@@ -17,7 +20,7 @@ app.use(methodOverride('_method'));
 app.use(express.static('public'))
 
 app.use(session({
-  secret: 'a3jkal12l3!lkj%soin',
+  secret: process.env.SESSION_SECRET,
   resave: false, 
   saveUninitialized: false 
 }))
@@ -72,7 +75,7 @@ app.post('/login', async (req, res, next) => {
 })
 
 
-app.listen(3000, () => {
-  console.log('listening... on port: ', 3000);
+app.listen(PORT, () => {
+  // console.log(`listening... on port: ${PORT}`);
 });
 
