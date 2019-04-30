@@ -1,7 +1,5 @@
 
 <%- include ../partials/header.ejs %>
-
-
 	<h1>User Profile</h1>
 
 		<div id="regForm">
@@ -50,9 +48,9 @@
 											<div class="projectImage">
 												<img src="<%=user.projects[i].projectImage%>" class="projectImage" /> 
 											</div>
-											<h3>Project Name: <%=user.projects[i].name%></h3>
+											<h3><%=user.projects[i].name%></h3>
 											<div>
-												<p>Project Description: <%=user.projects[i].description%></p>
+												<p>Description: <%=user.projects[i].description%></p>
 											</div>
 										</div>
 									</a>
@@ -62,7 +60,6 @@
 					</ul>
 			</div>
 		</div>
-
 
 <%- include ../partials/footer.ejs %>
 </html>

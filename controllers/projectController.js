@@ -3,6 +3,11 @@ const router = express.Router();
 const Project = require('../models/projects.js');
 const User = require('../models/users.js');
 const bcrypt = require('bcryptjs');
+const multer = require('multer')
+
+
+// GET PROJECT PHOTO
+router.get('/')
 
 // NEW ROUTE
 router.get('/new', (req, res) => {
