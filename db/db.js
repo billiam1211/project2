@@ -8,11 +8,11 @@ mongoose.connect(process.env.MONGODB_URI, {
 });
 
 mongoose.connection.on('connected', () => {
-  console.log('mongoose connected to ', connectionString);
+  console.log('mongoose connected');
 });
 
 mongoose.connection.on('disconnected', () => {
-  console.log('mongoose disconnected to ', connectionString);
+  console.log('mongoose disconnected to ');
 });
 
 mongoose.connection.on('error', (error) => {
