@@ -5,8 +5,6 @@ const User = require('../models/users.js');
 const bcrypt = require('bcryptjs');
 
 
-
-
 // NEW ROUTE
 router.get('/new', (req, res) => {
 	// render new user 
