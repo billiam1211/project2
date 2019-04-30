@@ -162,6 +162,7 @@ strong {
 	border-radius: 15px;
 	font-family: 'Poiret One', cursive;
 	font-size: 14pt;
+	min-width: 600px;
 }
 
 .newForm > form > div {
