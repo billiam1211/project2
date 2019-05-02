@@ -1,10 +1,11 @@
 # project2
-CRUD Project => Programming Project Showcase
 
-DESCRIPTION: To create an application that features a database of student projects, that can be leveraged to showcase them to the public, recruiters, enthusiasts, and other developers. 
+Dev-Folio
+
+DESCRIPTION: Dev-Folio is an application that features a database of developer projects, that can be leveraged to showcase them to the public, recruiters, enthusiasts, and other developers. 
 
 ***User Stories***
-1) Mission Statement: Provide a platform where users can upload and share their latest programming work AND talent seekers can view projects of up and coming developers
+1) Mission Statement: Provide a platform where users can upload and share their latest programming work AND talent seekers can view projects of up and coming developers.
 
 2) HOME 
     - Provide a link for users to log-in or register. 
@@ -93,6 +94,12 @@ PROJECT MODEL
     - Project Link (required)
     - Github (or other repo)
     - Pictures 
+
+
+Upcoming features: 
+    - Upload photos from a local directory using Multer
+    - 2-Step password verification
+    - Welcome emails
 
 
 
